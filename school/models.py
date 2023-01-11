@@ -63,6 +63,12 @@ class School(models.Model):
         ("Elgeyo-Marakwet", "Elgeyo-Marakwet"),
         
     ]
+    SCHOOL_FOR_CHOICES = [
+        ("Boys", "Boys"),
+        ("Girls", "Girls"),
+        ("Mixed", "Mixed"),
+        ("Special School", "Special School"),
+    ]
     SCHOOL_TYPE_CHOICES = [
         ("Public", "Public"),
         ("Private", "Private"),
@@ -78,6 +84,7 @@ class School(models.Model):
     
     name = models.CharField(max_length=255, null=False)
     location = models.CharField(max_length=255, null=True)
+    school_for = models.CharField(max_length=255, choices=SCHOOL_FOR_CHOICES, null=False)
     school_type = models.CharField(max_length=255, choices=SCHOOL_TYPE_CHOICES, null=False)
     school_category = models.CharField(max_length=255, choices=SCHOOL_CATEGORY_CHOICES, null=False)
     county = models.CharField(max_length=255, choices=COUNRY_CHOICES, null=False, default="Mombasa")
