@@ -4,3 +4,9 @@ settings.py
 # Database
 .DS_Store
 db.sqlite3
+
+# Migrations
+migrations/
+
+# Byte-compiled 
+__pycache__/
