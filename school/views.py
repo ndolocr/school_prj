@@ -1,3 +1,11 @@
-from django.shortcuts import render
-
+from django.shortcuts import render, HttpResponse
+from py2neo import Graph
 # Create your views here.
+
+
+
+def save_data(request):
+    graph = Graph(**settings.NEO4J_DATABASES['default'])
+    data = request.POST.get('data')
+    graph.run("CREATE (:Label {data: {data}})", data=data)
+    return HttpResponse("Data saved successfully.")
