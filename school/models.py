@@ -77,9 +77,10 @@ class School(models.Model):
     ]
     
     name = models.CharField(max_length=255, null=False)
-    location = models.CharField(max_length=255, choices=COUNRY_CHOICES, null=False)
+    location = models.CharField(max_length=255, null=True)
     school_type = models.CharField(max_length=255, choices=SCHOOL_TYPE_CHOICES, null=False)
     school_category = models.CharField(max_length=255, choices=SCHOOL_CATEGORY_CHOICES, null=False)
+    county = models.CharField(max_length=255, choices=COUNRY_CHOICES, null=False, default="Mombasa")
 
     updated_on = models.DateTimeField( auto_now = True)
     created_on = models.DateTimeField( auto_now_add = True)
