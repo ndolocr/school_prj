@@ -1,2 +1,6 @@
 # Settings File
 settings.py
+
+# Database
+.DS_Store
+db.sqlite3
